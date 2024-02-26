@@ -983,3 +983,4 @@ def interviewStatus(request):
             print("==== choose 3 of one ====")
     else:
         print("=======================")
+        print("========================")
