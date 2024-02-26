@@ -64,9 +64,6 @@ class EmployeeTable(models.Model):
     def __str__(self):
         return self.username
 
-    # leave_balance = models.ForeignKey(LeaveType_with_LeaveBalance,on_delete=models.CASCADE,null=True)
-
-    # Allocation_Leave = models.ForeignKey(LeaveType_with_LeaveBalance,on_delete=models.CASCADE,null=True)
 
 class LeaveType_with_LeaveBalance(models.Model):
 
@@ -76,13 +73,7 @@ class LeaveType_with_LeaveBalance(models.Model):
     Bereavement_Leave = models.IntegerField(null=True,default=10)
     username =  models.CharField(max_length=20,unique=True,null=True)
 
-    # user_details = models.ForeignKey(EmployeeTable, to_field='username',on_delete=models.PROTECT,null=True)
-    # user_details = models.ForeignKey(EmployeeTable, to_field='username',on_delete=models.CASCADE,null=True)
 
-# check_in_out = (
-#     ('IN','IN'),
-#     ('OUT','OUT')
-# )
 class Attendance(models.Model):
 
     username = models.CharField(max_length=20)
@@ -90,12 +81,10 @@ class Attendance(models.Model):
     Department = models.CharField(max_length=20)
     check_in = models.DateTimeField(null=True)
     check_out = models.DateTimeField(null=True)
-    # total_hour = models.CharField()
 
 
-# class EmployeeLog(Attendance):
-#     class Meta:
-#         proxy = True
+
+
 
 class Logtable(models.Model):
     
@@ -112,15 +101,7 @@ class multiple_log(models.Model):
     email = models.EmailField()
     check_in = models.TimeField(null=True) 
     check_out = models.TimeField(null=True)
-    # total_hour = models.TimeField(null =True) 
 
-
-# class LeaveType_with_LeaveBalance(models.Model):
-
-#     Custom_Festival_Leave = models.CharField(max_length=10,null=True)
-#     Leave_Without_Pay = models.CharField(max_length= 10,null=True)
-#     Privilege_Leave = models.CharField(max_length=10,null=True)
-#     Bereavement_Leave = models.CharField(max_length=10,null=True)
 
 
 LeaveType = (
@@ -152,13 +133,6 @@ class Leave_Request(models.Model):
     total_days = models.CharField(null=True,max_length=20)
     status = models.CharField(null=True,max_length=100,default='Pending')
     selectleave = models.CharField(null=True,max_length=100,choices=leavechoice)
-    
-    # notify = models.ForeignKey(EmployeeTable, to_field='username',on_delete=models.CASCADE,null=True)
-    
-
-# class Remaining_Leave(LeaveType):
-#     class Meta:
-#         proxy = True
 
 gender_choice = (
     ('M','Male'),
