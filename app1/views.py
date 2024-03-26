@@ -214,7 +214,7 @@ def emp_logout(request):
 def emp_attendance(request):
 
         # if request.user:
-            
+        
             try:
                 print("===typeof=======",type(request.user))
                 emp = EmployeeTable.objects.get(email=request.user)
