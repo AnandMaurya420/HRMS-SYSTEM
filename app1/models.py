@@ -83,9 +83,6 @@ class Attendance(models.Model):
     check_out = models.DateTimeField(null=True)
 
 
-
-
-
 class Logtable(models.Model):
     
     date = models.DateField()
@@ -122,6 +119,7 @@ leavechoice = (
     ('second half','second half'),
     ('full day','full day')
 )
+
 class Leave_Request(models.Model):
 
     name = models.CharField(max_length=30)
